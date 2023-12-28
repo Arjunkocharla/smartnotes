@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915135748319",
+    "project_id": "smartnotes-ai",
+    "storage_bucket": "smartnotes-ai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915135748319:android:2f41e35597c29e60f7316a",
+        "android_client_info": {
+          "package_name": "ai.smartnotezz.smartnotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9GphI6SBsNBtWWmVcIdH3UWA_E1mnNuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
