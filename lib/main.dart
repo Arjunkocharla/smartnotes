@@ -1,5 +1,7 @@
 //import 'dart:js';
 
+import 'dart:html';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -39,18 +41,16 @@ class HomePage extends StatelessWidget {
           case ConnectionState.done:
             final user = FirebaseAuth.instance.currentUser;
 
-            //   final emailVerified = user?.emailVerified ?? false;
-
-            // if (user?.emailVerified ?? false) {
-            //   return const Text("Done",
-            //       style: TextStyle(
-            //         color: Colors.black, // Set text color to white
-            //         fontSize: 18.0, // Adjust text size as needed
-            //       ));
-            // } else {
-            //   return const VerifyEmailView();
-            // }
-            return const LoginView();
+            if (user != null) {
+              if (user.emailVerified) {
+                print("Email is verified");
+              } else {
+                return const VerifyEmailView();
+              }
+            } else {
+              return const LoginView();
+            }
+            return const Text("Done");
 
           default:
             return const CircularProgressIndicator();
@@ -71,7 +71,7 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Verify Email")),
+      appBar: AppBar(title: const Text("Verify Email")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
